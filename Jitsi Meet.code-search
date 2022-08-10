@@ -1,0 +1,1030 @@
+# Query: Jitsi Meet
+# ContextLines: 1
+
+249 results - 121 files
+
+config.js:
+   526  
+   527:     // Moves all Jitsi Meet 'beforeunload' logic (cleanup, leaving, disconnecting, etc) to the 'unload' event.
+   528      // disableBeforeUnloadHandlers: true,
+
+  1317       * This property can be used to alter the generated meeting invite links (in combination with a branding domain
+  1318:      * which is retrieved internally by jitsi meet) (e.g. https://meet.jit.si/someMeeting
+  1319       * can become https://brandedDomain/roomAlias)
+
+CONTRIBUTING.md:
+  5  # Reporting Issues
+  6: Provide as much information as possible. Mention the version of Jitsi Meet,
+  7  Jicofo and JVB you are using, and explain (as detailed as you can) how the
+
+interface_config.js:
+  103      /**
+  104:      * Whether the mobile app Jitsi Meet is to be promoted to participants
+  105       * attempting to join a conference in a mobile Web browser. If
+
+  126  
+  127:     NATIVE_APP_NAME: 'Jitsi Meet',
+  128  
+
+manifest.json:
+   9    ],
+  10:   "short_name": "Jitsi Meet",
+  11:   "name": "Jitsi Meet",
+  12    "icons": [
+
+README.md:
+   1: # <p align="center">Jitsi Meet</p>
+   2  
+   3: Jitsi Meet is a set of Open Source projects which empower users to use and deploy
+   4  video conferencing platforms with state-of-the-art video quality and features.
+
+  13  
+  14: Amongst others here are the main features Jitsi Meet offers:
+  15  
+
+  28  
+  29: ## Using Jitsi Meet
+  30  
+  31: Using Jitsi Meet is straightforward, as it's browser based. Head over to [meet.jit.si](https://meet.jit.si) and give it a try. It's anonymous, scalable and free to use. All browsers are supported! 
+  32  
+
+  47  
+  48: If you'd like to run your own Jitsi Meet installation head over to the [handbook](https://jitsi.github.io/handbook/docs/devops-guide/) to get started.
+  49  
+
+  64  
+  65: All the Jitsi Meet documentation is available in [the handbook](https://jitsi.github.io/handbook/).
+  66  
+
+  68  
+  69: For a comprehensive description of all Jitsi Meet's security aspects, please check [this link](https://jitsi.org/security).
+  70  
+  71: For a detailed description of Jitsi Meet's End-to-End Encryption (E2EE) implementation,
+  72  please check [this link](https://jitsi.org/e2ee-whitepaper/).
+  73  
+  74: For information on reporting security vulnerabilities in Jitsi Meet, see [SECURITY.md](./SECURITY.md).
+  75  
+
+  77  
+  78: If you are looking to contribute to Jitsi Meet, first of all, thank you! Please
+  79  see our [guidelines for contributing](CONTRIBUTING.md).
+
+webpack.config.js:
+  10  /**
+  11:  * The URL of the Jitsi Meet deployment to be proxy to in the context of
+  12   * development with webpack-dev-server.
+
+.github/ISSUE_TEMPLATE/1-bug-report.md:
+  37  
+  38: - Jitsi Meet version:
+  39  - Operating System:
+
+.github/ISSUE_TEMPLATE/2-feature-request.md:
+   9  <!--
+  10: Thank you for suggesting an idea to make Jitsi Meet better.
+  11  
+
+.github/ISSUE_TEMPLATE/config.yml:
+  2  contact_links:
+  3:   - name: Need help with Jitsi Meet?
+  4      url: https://community.jitsi.org
+
+android/build.gradle:
+  39      // The Maven artifact groupdId of the third-party react-native modules which
+  40:     // Jitsi Meet SDK for Android depends on and which are not available in
+  41      // third-party Maven repositories so we have to deploy to a Maven repository
+
+  87  
+  88:     // Third-party react-native modules which Jitsi Meet SDK for Android depends
+  89      // on and which are not available in third-party Maven repositories need to
+
+android/README.md:
+  1: # Jitsi Meet SDK for Android
+  2  
+
+android/app/src/main/java/org/jitsi/meet/MainActivity.java:
+  43  /**
+  44:  * The one and only Activity that the Jitsi Meet app needs. The
+  45   * {@code Activity} is launched in {@code singleTask} mode, so it will be
+
+android/app/src/main/java/org/jitsi/meet/MainApplication.java:
+  27  /**
+  28:  * Application class for Jitsi Meet. The only reason why this exists is for Detox
+  29   * to believe our app is a "greenfield" app. SDK users need not use this.
+
+android/app/src/main/res/values/strings.xml:
+  1  <resources>
+  2:     <string name="app_name">Jitsi Meet</string>
+  3:     <string name="restriction_server_url_description">URL of Jitsi Meet server instance to connect to</string>
+  4      <string name="restriction_server_url_title">Server URL</string>
+
+android/scripts/release-sdk.sh:
+   24  
+   25: echo "Releasing Jitsi Meet SDK ${SDK_VERSION}"
+   26  echo "Using ${MVN_REPO} as the Maven repo"
+
+   88  
+   89: # Now build and publish the Jitsi Meet SDK and its dependencies
+   90: echo "Building and publishing the Jitsi Meet SDK"
+   91  pushd ${THIS_DIR}/../
+
+  100      git add -A .
+  101:     git commit -m "Jitsi Meet SDK + dependencies: ${SDK_VERSION}"
+  102      popd
+
+android/sdk/build.gradle:
+  210                  pomXml.appendNode('name', 'jitsi-meet-sdk')
+  211:                 pomXml.appendNode('description', 'Jitsi Meet SDK for Android')
+  212                  def dependencies = pomXml.appendNode('dependencies')
+
+android/sdk/src/main/java/org/jitsi/meet/sdk/ConnectionService.java:
+   30  /**
+   31:  * Jitsi Meet implementation of {@link ConnectionService}. At the time of this
+   32   * writing it implements only the outgoing call scenario.
+
+  336      /**
+  337:      * Connection implementation for Jitsi Meet's {@link ConnectionService}.
+  338       *
+
+android/sdk/src/main/java/org/jitsi/meet/sdk/JitsiMeetActivity.java:
+  195       * <p>
+  196:      * This is mainly required so we do some extra initialization in the Jitsi Meet app.
+  197       *
+
+android/sdk/src/main/java/org/jitsi/meet/sdk/JitsiMeetConferenceOptions.java:
+  26  /**
+  27:  * This class represents the options when joining a Jitsi Meet conference. The user can create an
+  28   * instance by using {@link JitsiMeetConferenceOptions.Builder} and setting the desired options
+
+android/sdk/src/main/java/org/jitsi/meet/sdk/JitsiReactNativeHost.java:
+  14   *
+  15:  * Generally speaking, apps using the SDK (other than the Jitsi Meet app itself) should not
+  16   * need to use this because the
+
+android/sdk/src/main/java/org/jitsi/meet/sdk/RNConnectionService.java:
+  24  /**
+  25:  * The react-native side of Jitsi Meet's {@link ConnectionService}. Exposes
+  26   * the Java Script API.
+
+  74       *
+  75:      * @param callUUID - unique call identifier assigned by Jitsi Meet to
+  76       *        a conference call.
+  77:      * @param handle - a call handle which by default is Jitsi Meet room's URL.
+  78       * @param hasVideo - whether or not user starts with the video turned on.
+
+android/sdk/src/main/res/values/strings.xml:
+  1  <resources>
+  2:     <string name="app_name">Jitsi Meet SDK</string>
+  3      <string name="dropbox_app_key"></string>
+
+connection_optimization/do_external_connect.js:
+   7   * Implements external connect using createConnectionExternally function defined
+   8:  * in external_connect.js for Jitsi Meet. Parses the room name and JSON Web
+   9   * Token (JWT) from the URL and executes createConnectionExternally.
+  10   *
+  11:  * NOTE: If you are using lib-jitsi-meet without Jitsi Meet, you should use this
+  12:  * file as reference only because the implementation is Jitsi Meet-specific.
+  13   *
+
+debian/control:
+  14  Description: WebRTC JavaScript video conferences
+  15:  Jitsi Meet is a WebRTC JavaScript application that uses Jitsi
+  16   Videobridge to provide high quality, scalable video conferences.
+
+  23  Depends: openssl, nginx | nginx-full | nginx-extras | apache2
+  24: Description: Configuration for web serving of Jitsi Meet
+  25:  Jitsi Meet is a WebRTC JavaScript application that uses Jitsi
+  26   Videobridge to provide high quality, scalable video conferences.
+
+  31   This package contains configuration for Nginx to be used with
+  32:  Jitsi Meet.
+  33  
+
+  37  Replaces: jitsi-meet-tokens
+  38: Description: Prosody configuration for Jitsi Meet
+  39:  Jitsi Meet is a WebRTC JavaScript application that uses Jitsi
+  40   Videobridge to provide high quality, scalable video conferences.
+
+  45   This package contains configuration for Prosody to be used with
+  46:  Jitsi Meet.
+  47  
+
+  50  Depends: ${misc:Depends}, prosody-trunk | prosody-0.11 | prosody-0.12 | prosody (>= 0.11.2), jitsi-meet-prosody
+  51: Description: Prosody token authentication plugin for Jitsi Meet
+  52  
+
+  56  Depends: ${misc:Depends}, jitsi-meet-prosody, coturn, dnsutils
+  57: Description: Configures coturn to be used with Jitsi Meet
+
+debian/copyright:
+  1  Format: http://dep.debian.net/deps/dep5
+  2: Upstream-Name: Jitsi Meet
+  3  Upstream-Contact: Emil Ivov <emcho@jitsi.org>
+
+debian/jitsi-meet-prosody.README.Debian:
+  1: Prosody configuration for Jitsi Meet for Debian
+  2  ----------------------------
+  3  
+  4: Jitsi Meet is a WebRTC video conferencing application. This package contains 
+  5: configuration of prosody which are needed for Jitsi Meet to work.
+  6  
+
+debian/jitsi-meet-tokens.README.Debian:
+  1: Token authentication plugin for Jitsi Meet
+  2  ----------------------------
+  3  
+  4: Jitsi Meet is a WebRTC video conferencing application. This package contains
+  5: Prosody plugin which enables token authentication in Jitsi Meet installation.
+  6  
+
+debian/jitsi-meet-tokens.templates:
+  12  Type: string
+  13: _Description: The location of Jitsi Meet Prosody config file
+  14    Jitsi-meet Prosody config file location:
+
+debian/jitsi-meet-web-config.postinst:
+  121  
+  122:         # jitsi meet
+  123          JITSI_MEET_CONFIG="/etc/jitsi/meet/$JVB_HOSTNAME-config.js"
+
+  256          echo "     cNMMMNl.."
+  257:         echo "     .kMMMX;             Interested in adding telephony to your Jitsi meetings?"
+  258          echo "      ;XMMMO'"
+
+debian/jitsi-meet-web-config.templates:
+   3  __Choices: Generate a new self-signed certificate (You will later get a chance to obtain a Let's encrypt certificate), I want to use my own certificate
+   4: _Description: SSL certificate for the Jitsi Meet instance
+   5:  Jitsi Meet is best to be set up with an SSL certificate.
+   6   Having no certificate, a self-signed one will be generated.
+
+  31  _Description: Hostname:
+  32:  The Jitsi Meet web config package needs the DNS hostname of your instance.
+
+debian/jitsi-meet-web.README.Debian:
+  1: Jitsi Meet for Debian
+  2  ----------------------------
+  3  
+  4: This is a WebRTC frontend of the video conferencing tool Jitsi Meet. It depends on the
+  5  jitsi-videobridge package, which is a SFU (Selective Forwarding Unit) and both packages
+
+debian/po/templates.pot:
+   34  #: ../jitsi-meet-web-config.templates:1002
+   35: msgid "SSL certificate for the Jitsi Meet instance"
+   36  msgstr ""
+
+   41  msgid ""
+   42: "Jitsi Meet is best to be set up with an SSL certificate. Having no "
+   43  "certificate, a self-signed one will be generated. Having a certificate "
+
+  111  msgid ""
+  112: "The Jitsi Meet web config package needs the DNS hostname of your instance."
+  113  msgstr ""
+
+doc/api.md:
+  1: # Jitsi Meet API
+  2  
+
+doc/quick-install.md:
+  1: # Jitsi Meet quick install
+  2  
+
+doc/debian/jitsi-meet/README:
+  1: Jitsi Meet
+  2  
+
+doc/debian/jitsi-meet-prosody/prosody.cfg.lua-jvb.example:
+  138  
+  139: -- Enables dial-in for Jitsi meet components customers
+  140  -- Note: make sure you have the following packages installed: lua-basexx, liblua5.3-dev, libssl-dev, luarocks
+
+  142  VirtualHost "jigasi.meet.jitsi"
+  143:     enabled = false -- Jitsi meet components customers remove this line
+  144      modules_enabled = {
+
+doc/debian/jitsi-meet-prosody/README:
+  1: Prosody configuration for Jitsi Meet
+
+doc/debian/jitsi-meet-turn/README:
+  1: Coturn configuration for Jitsi Meet
+
+ios/README.md:
+  1: # Jitsi Meet SDK for iOS
+  2  
+
+ios/app/app.xcodeproj/project.pbxproj:
+  381  			name = JitsiMeet;
+  382: 			productName = "Jitsi Meet";
+  383  			productReference = 13B07F961A680F5B00A75B9A /* jitsi-meet.app */;
+
+ios/app/broadcast-extension/Info.plist:
+  7  	<key>CFBundleDisplayName</key>
+  8: 	<string>Jitsi Meet Broadcast Extension</string>
+  9  	<key>CFBundleExecutable</key>
+
+ios/app/src/Info.plist:
+  7  	<key>CFBundleDisplayName</key>
+  8: 	<string>Jitsi Meet</string>
+  9  	<key>CFBundleExecutable</key>
+
+ios/app/src/ViewController.m:
+  66      userActivity.title = [NSString stringWithFormat:@"Join %@", conference];
+  67:     userActivity.suggestedInvocationPhrase = @"Join my Jitsi meeting";
+  68      userActivity.userInfo = @{@"url": urlStr};
+
+ios/app/watchos/app/Info.plist:
+  7  	<key>CFBundleDisplayName</key>
+  8: 	<string>Jitsi Meet</string>
+  9  	<key>CFBundleExecutable</key>
+
+ios/app/watchos/extension/Info.plist:
+  7  	<key>CFBundleDisplayName</key>
+  8: 	<string>Jitsi Meet Companion Extension</string>
+  9  	<key>CFBundleExecutable</key>
+
+ios/scripts/release-sdk.sh:
+  12  
+  13: echo "Releasing Jitsi Meet SDK ${SDK_VERSION}"
+  14  
+
+ios/sdk/sdk.xcodeproj/project.pbxproj:
+  337  			name = JitsiMeetSDK;
+  338: 			productName = "Jitsi Meet SDK";
+  339  			productReference = 0BD906E51EC0C00300C8C18E /* JitsiMeetSDK.framework */;
+
+lang/main-af.json:
+  277          "decline": "Weier",
+  278:         "productLabel": "vanaf Jitsi Meet",
+  279          "videoCallTitle": "Inkomende video-oproep"
+
+lang/main-be.json:
+  314          "decline": "Адхіліць",
+  315:         "productLabel": "з Jitsi Meet",
+  316          "videoCallTitle": "Уваходны відэазванок"
+
+lang/main-bg.json:
+  323          "decline": "Отхвърляне",
+  324:         "productLabel": "от Jitsi Meet",
+  325          "videoCallTitle": "Входящ видео разговор"
+
+lang/main-ca.json:
+   443          "decline": "Rebutja",
+   444:         "productLabel": "de Jitsi Meet",
+   445          "videoCallTitle": "Videotrucada entrant"
+
+   679          "newDeviceCameraTitle": "S'ha detectat una càmera nova",
+   680:         "oldElectronClientDescription1": "Sembla que useu una versió antiga del client Jitsi Meet, que té vulnerabilitats de seguretat conegudes. Assegureu-vos d'actualitzar-lo",
+   681          "oldElectronClientDescription2": "última construcció",
+
+  1296              "googleLogo": "Logotip de Google",
+  1297:             "logoDeepLinking": "Logotip de Jitsi Meet",
+  1298              "microsoftLogo": "Logotip de Microsoft",
+
+lang/main-cs.json:
+  359          "decline": "OK",
+  360:         "productLabel": "od Jitsi Meet",
+  361          "videoCallTitle": "Příchozí videohovor"
+
+  548          "newDeviceCameraTitle": "Detekována nová kamera",
+  549:         "oldElectronClientDescription1": "Zdá se, že používáte zastaralou verzi klienta Jitsi Meet, který má známé bezpečnostní zranitelnosti. Aktualizujte prosím na ",
+  550          "oldElectronClientDescription2": "nejnovější sestavení",
+
+lang/main-de.json:
+   447          "decline": "OK",
+   448:         "productLabel": "von Jitsi Meet",
+   449          "videoCallTitle": "Eingehender Videoanruf"
+
+  1326              "googleLogo": "Google Logo",
+  1327:             "logoDeepLinking": "Jitsi Meet Logo",
+  1328              "microsoftLogo": "Microsoft Logo",
+
+lang/main-el.json:
+  330          "decline": "Απόρριψη",
+  331:         "productLabel": "από το Jitsi Meet",
+  332          "videoCallTitle": "Εισερχόμενη κλήση βίντεο"
+
+  513          "newDeviceCameraTitle": "Εντοπίστηκε νέα κάμερα",
+  514:         "oldElectronClientDescription1": "Φαίνεται ότι χρησιμοποιείτε μια παλιά έκδοση του πελάτη Jitsi Meet που έχει γνωστά θέματα ευπάθειας ασφαλείας. Παρακαλώ βεβαιωθείτε ότι έχετε την ενημερωμένη έκδοση για ",
+  515          "oldElectronClientDescription2": "πρόσφατη έκδοση μας",
+
+lang/main-enGB.json:
+  311          "decline": "Dismiss",
+  312:         "productLabel": "from Jitsi Meet",
+  313          "videoCallTitle": "Incoming video call"
+
+lang/main-eo.json:
+  316          "decline": "Formeti",
+  317:         "productLabel": "el Jitsi Meet",
+  318          "videoCallTitle": "Alvenanta vida voko"
+
+  470          "newDeviceCameraTitle": "Nova kamerao detektita",
+  471:         "oldElectronClientDescription1": "Ŝajnas, ke vi uzas malnovan version de la kliento de Jitsi Meet, kiu havas konatajn sekurec-vundeblojn. Bonvolu ĝisdatigi al nia ",
+  472          "oldElectronClientDescription2": "plej nova versio",
+
+lang/main-es.json:
+  393          "decline": "Descartar",
+  394:         "productLabel": "de Jitsi Meet",
+  395          "videoCallTitle": "Videollamada"
+
+  608          "newDeviceCameraTitle": "Se detectó una cámara nueva",
+  609:         "oldElectronClientDescription1": "Estás usando una versión vieja de la aplicación de Jitsi Meet que tiene problemas de seguridad. ¡Por favor, actualiza a la ",
+  610          "oldElectronClientDescription2": "versión más reciente",
+
+lang/main-esUS.json:
+  415          "decline": "Descartar",
+  416:         "productLabel": "de Jitsi Meet",
+  417          "videoCallTitle": "Videollamada"
+
+  632          "newDeviceCameraTitle": "Se detectó una cámara nueva",
+  633:         "oldElectronClientDescription1": "Estás usando una versión vieja de la aplicación de Jitsi Meet que tiene problemas de seguridad. ¡Por favor, actualiza a la ",
+  634          "oldElectronClientDescription2": "versión más reciente",
+
+lang/main-eu.json:
+   362          "decline": "Baztertu",
+   363:         "productLabel": "Jitsi Meet-etik",
+   364          "videoCallTitle": "Bideo-deia sartzen"
+
+   557          "newDeviceCameraTitle": "Kamera berria hauteman da",
+   558:         "oldElectronClientDescription1": "Segurtasun arazoak dituen Jitsi Meet aplikazioa erabiltzen arai zara. Eguneratu ezazu",
+   559          "oldElectronClientDescription2": "bertsio berriagora",
+
+  1015              "googleLogo": "Googleren logoa",
+  1016:             "logoDeepLinking": "Jitsi meeten logo",
+  1017              "microsoftLogo": "Microsoften logo",
+
+lang/main-fa.json:
+  1273              "googleLogo": "لوگوی گوگل",
+  1274:             "logoDeepLinking": "لوگوی Jitsi Meet",
+  1275              "microsoftLogo": "آرم Microsoft",
+
+lang/main-fi.json:
+  277          "decline": "Hylkää",
+  278:         "productLabel": "Jitsi Meetistä",
+  279          "videoCallTitle": "Saapuva videopuhelu"
+
+lang/main-fr.json:
+   431          "decline": "Rejeter",
+   432:         "productLabel": "via Jitsi Meet",
+   433          "videoCallTitle": "Appel vidéo entrant"
+
+   667          "newDeviceCameraTitle": "Nouvelle caméra détectée",
+   668:         "oldElectronClientDescription1": "Vous semblez utiliser une ancienne version du client Jitsi Meet qui présente des failles de sécurité connues. Veuillez vous assurer de mettre à jour vers notre ",
+   669          "oldElectronClientDescription2": "dernière build",
+
+  1278              "googleLogo": "Logo Google",
+  1279:             "logoDeepLinking": "Logo Jitsi meet",
+  1280              "microsoftLogo": "Logo Microsoft",
+
+lang/main-frCA.json:
+   31          "addMeetingURL": "Ajouter un lien de réunion",
+   32:         "confirmAddLink": "Voulez-vous ajouter un lien Jitsi Meet à cet événement ?",
+   33          "error": {
+
+  290          "decline": "Rejeter",
+  291:         "productLabel": "de Jitsi Meet",
+  292          "videoCallTitle": "Appel vidéo entrant"
+
+lang/main-gl.json:
+  295          "decline": "Rexeitar",
+  296:         "productLabel": "de Jitsi Meet",
+  297          "videoCallTitle": "Chamada de vídeo entrante"
+
+lang/main-he.json:
+  463          "newDeviceCameraTitle": "זוהתה מצלמה חדשה",
+  464:         "oldElectronClientDescription1": "נראה שאתה משתמש בגירסה ישנה של לקוח Jitsi Meet עם פגיעויות אבטחה ידועות. אנא וודא שאתה מעדכן ",
+  465          "oldElectronClientDescription2": "לגירסה האחרונה",
+
+lang/main-hr.json:
+   447          "decline": "Odbij",
+   448:         "productLabel": "od Jitsi Meet",
+   449          "videoCallTitle": "Dolazni videopoziv"
+
+   689          "noiseSuppressionStereoDescription": "Suzbijanja šumova stereo zvuka trenutačno nije podržano.",
+   690:         "oldElectronClientDescription1": "Čini se da koristiš staru verziju klijenta Jitsi Meet koja ima poznate sigurnosne probleme. Obavezno aktualiziraj na našu ",
+   691          "oldElectronClientDescription2": "najnoviju verziju",
+
+  1326              "googleLogo": "Google logotip",
+  1327:             "logoDeepLinking": "Jitsi meet logotip",
+  1328              "microsoftLogo": "Microsoft logotip",
+
+lang/main-hsb.json:
+   443          "decline": "ok",
+   444:         "productLabel": "wot Jitsi Meet",
+   445          "videoCallTitle": "widejo - telefonat"
+
+  1302              "googleLogo": "Google logo",
+  1303:             "logoDeepLinking": "Jitsi Meet logo",
+  1304              "microsoftLogo": "Microsoft logo",
+
+lang/main-hu.json:
+  310          "decline": "Elutasítás",
+  311:         "productLabel": "a Jitsi Meettől",
+  312          "videoCallTitle": "Bejövő videohívás"
+
+lang/main-id.json:
+  309          "decline": "Dismiss",
+  310:         "productLabel": "from Jitsi Meet",
+  311          "videoCallTitle": "Incoming video call"
+
+  463          "newDeviceCameraTitle": "New camera detected",
+  464:         "oldElectronClientDescription1": "You appear to be using an old verion of the Jitsi Meet client which has known security vulnerabilities. Please make sure you update to our ",
+  465          "oldElectronClientDescription2": "latest build",
+
+lang/main-is.json:
+  309          "decline": "Hunsa",
+  310:         "productLabel": "frá Jitsi Meet",
+  311          "videoCallTitle": "Innhringing myndsamtals"
+
+lang/main-it.json:
+   443          "decline": "Chiudi",
+   444:         "productLabel": "da Jitsi Meet",
+   445          "videoCallTitle": "Videochiamata in arrivo"
+
+   681          "newDeviceCameraTitle": "Trovata nuova videocamera",
+   682:         "oldElectronClientDescription1": "Sembri stare usando una versione obsoleta del client Jitsi Meet che ha dei problemi di sicurezza noti. Assicurati di aggiornarla presso il nostro ",
+   683          "oldElectronClientDescription2": "ultima build",
+
+  1302              "googleLogo": "Logo Google",
+  1303:             "logoDeepLinking": "Logo Jitsi meet",
+  1304              "microsoftLogo": "Logo Microsoft",
+
+lang/main-ja.json:
+   417          "decline": "拒否",
+   418:         "productLabel": "Jitsi Meet からの",
+   419          "videoCallTitle": "ビデオ通話着信"
+
+   641          "newDeviceCameraTitle": "新しいカメラを検出しました",
+   642:         "oldElectronClientDescription1": "あなたは既知のセキュリティ上の脆弱性がある、旧バージョンの Jitsi Meet クライアントを使用しているようです。今すぐ",
+   643          "oldElectronClientDescription2": "最新ビルド",
+
+  1224              "googleLogo": "Google ロゴ",
+  1225:             "logoDeepLinking": "Jitsi meet ロゴ",
+  1226              "microsoftLogo": "Microsoft ロゴ",
+
+lang/main-kab.json:
+   393          "decline": "Agwi",
+   394:         "productLabel": "seg Jitsi Meet",
+   395          "videoCallTitle": "Asiwel s tvidyut ikcem-d"
+
+   608          "newDeviceCameraTitle": "Tettwaf-d tkamiṛat tamaynut",
+   609:         "oldElectronClientDescription1": "Akka i nettwali tesseqdaceḍ lqem aqbur n umsaɣ Jitsi Meet i yesɛan uguren n tɣellist yettwassnen. Ma ulac aɣilif ḍmen ad tleqqmeḍ ",
+   610          "oldElectronClientDescription2": "lqem akk aneggaru",
+
+  1149              "googleLogo": "Alugu n Google",
+  1150:             "logoDeepLinking": "Alugu Jitsi Meet",
+  1151              "microsoftLogo": "Alugu n Microsoft",
+
+lang/main-ko.json:
+  332          "decline": "거절",
+  333:         "productLabel": "Jitsi Meet에서",
+  334          "videoCallTitle": "수신 화상 전화"
+
+lang/main-lv.json:
+  299          "decline": "Noraidīt",
+  300:         "productLabel": "no Jitsi Meet",
+  301          "videoCallTitle": "Ienākošs VIDEO zvans"
+
+lang/main-ml.json:
+  337          "decline": "നിരസിക്കുക",
+  338:         "productLabel": "Jitsi Meet-ൽ നിന്ന്",
+  339          "videoCallTitle": "ഇൻകമിംഗ് വീഡിയോ കോൾ"
+
+lang/main-mr.json:
+  314          "decline": "काढून टाकणे",
+  315:         "productLabel": "Jitsi Meet पासून",
+  316          "videoCallTitle": "येणारा व्हिडिओ कॉल"
+
+lang/main-nl.json:
+  384          "decline": "Negeren",
+  385:         "productLabel": "vanuit Jitsi Meet",
+  386          "videoCallTitle": "Inkomende video-oproep"
+
+  595          "newDeviceCameraTitle": "Nieuwe camera gedetecteerd",
+  596:         "oldElectronClientDescription1": "Het lijkt erop dat u een oude versie van Jitsi Meet gebruikt, waarvan beveiligingskwetsbaarheden bekend zijn. Zorg ervoor dat u nu bijwerkt naar de ",
+  597          "oldElectronClientDescription2": "nieuwste versie",
+
+lang/main-oc.json:
+   416          "decline": "Regetar",
+   417:         "productLabel": "de Jitsi Meet estant",
+   418          "videoCallTitle": "Sonada vidèo entranta"
+
+   640          "newDeviceCameraTitle": "Nòva camèra detectada",
+   641:         "oldElectronClientDescription1": "Sembla qu’utilizatz una version anciana del client Jitsi Meet qu’es conegut per conténer de problèmas de seguretat. Mercés de vos assegurar de metre a jorn ",
+   642          "oldElectronClientDescription2": "darrièra compilacion",
+
+  1223              "googleLogo": "Logotipe Google",
+  1224:             "logoDeepLinking": "Logotipe Jitsi meet",
+  1225              "microsoftLogo": "Logotipe Microsoft",
+
+lang/main-pl.json:
+   416          "decline": "Odrzuć",
+   417:         "productLabel": "z Jitsi Meet",
+   418          "videoCallTitle": "Przychodzące połączenie wideo"
+
+   638          "newDeviceCameraTitle": "Wykryto nową kamerę",
+   639:         "oldElectronClientDescription1": "Najprawdopodobniej używasz starej wersji klienta Jitsi Meet, który jest podatny na luki bezpieczeństwa. Proszę zaktualizować do ",
+   640          "oldElectronClientDescription2": "najnowszej wersji",
+
+  1209              "googleLogo": "Logo Google",
+  1210:             "logoDeepLinking": "Logo Jitsi meet",
+  1211              "microsoftLogo": "Logo Microsoftu",
+
+lang/main-pt.json:
+   447          "decline": "Recusar",
+   448:         "productLabel": "do Jitsi Meet",
+   449          "videoCallTitle": "Chamada de vídeo recebida"
+
+   693          "noiseSuppressionStereoDescription": "A supressão do ruído de áudio estéreo não é atualmente suportada.",
+   694:         "oldElectronClientDescription1": "Parece estar a utilizar uma versão antiga do cliente Jitsi Meet que tem vulnerabilidades de segurança conhecidas. Por favor, certifique-se de que actualiza a nossa ",
+   695          "oldElectronClientDescription2": "compilação mais recente",
+
+  1336              "googleLogo": "Logo do Google",
+  1337:             "logoDeepLinking": "Logo do Jitsi Meet",
+  1338              "microsoftLogo": "Logo da Microsoft",
+
+lang/main-ptBR.json:
+   393          "decline": "Dispensar",
+   394:         "productLabel": "do Jitsi Meet",
+   395          "videoCallTitle": "Chamada de vídeo recebida"
+
+   608          "newDeviceCameraTitle": "Nova câmera detectada",
+   609:         "oldElectronClientDescription1": "Você está usando um versão antiga do cliente Jitsi Meet que possui uma conhecida vulnerabilidade de segurança. Por favor tenha certeza de atulizar para a nossa ",
+   610          "oldElectronClientDescription2": "última versão",
+
+  1149              "googleLogo": "Logo do Google",
+  1150:             "logoDeepLinking": "Logo do Jitsi Meet",
+  1151              "microsoftLogo": "Logo da Microsoft",
+
+lang/main-ro.json:
+  310          "decline": "Respins",
+  311:         "productLabel": "de la Jitsi Meet",
+  312          "videoCallTitle": "Intrare apel video"
+
+lang/main-sc.json:
+  309          "decline": "Iscarta",
+  310:         "productLabel": "dae Jitsi Meet",
+  311          "videoCallTitle": "Mutida de vìdeu in intrada"
+
+lang/main-sk.json:
+  528          "newDeviceCameraTitle": "Bola zistená nová kamera",
+  529:         "oldElectronClientDescription1": "Používate starú verziu klienta Jitsi Meet, ktorá má známe zraniteľnosti. Aktualizujte na ",
+  530          "oldElectronClientDescription2": "najnovšiu verziu",
+
+lang/main-sl.json:
+   393          "decline": "Zavrni",
+   394:         "productLabel": "iz Jitsi Meet",
+   395          "videoCallTitle": "Dohodni video klic"
+
+   608          "newDeviceCameraTitle": "Zaznana je bila nova kamera",
+   609:         "oldElectronClientDescription1": "Uporabljate staro verzijo aplikacije Jitsi Meet, ki ima varnostne ranljivosti. Prosimo, naložite si ",
+   610          "oldElectronClientDescription2": "zadnjo verzijo.",
+
+  1149              "googleLogo": "Google Logo",
+  1150:             "logoDeepLinking": "Jitsi meet logo",
+  1151              "microsoftLogo": "Microsoft logo",
+
+lang/main-sq.json:
+   417          "decline": "Hidhe tej",
+   418:         "productLabel": "nga Jitsi Meet",
+   419          "videoCallTitle": "Thirrje ardhëse me video"
+
+   641          "newDeviceCameraTitle": "U pikas kamerë e re",
+   642:         "oldElectronClientDescription1": "Duket se përdorni një version të vjetër të klientit Jitsi Meet, i cili ka cenueshmëri sigurie që njihen. Ju lutemi, siguroni përditësimin me ",
+   643          "oldElectronClientDescription2": "montimin tonë më të ri",
+
+  1227              "googleLogo": "Stemë Google-i",
+  1228:             "logoDeepLinking": "Stemë “Jitsi meet”",
+  1229              "microsoftLogo": "Stemë Microsoft-i",
+
+lang/main-sv.json:
+  409          "decline": "Avvisa",
+  410:         "productLabel": "från Jitsi Meet",
+  411          "videoCallTitle": "Inkommande videosamtal"
+
+  623          "newDeviceCameraTitle": "Ny kamera hittad",
+  624:         "oldElectronClientDescription1": "Den version av Jitsi meet som används är gammal och har säkerhetsluckor. Var god uppdatera till den senaste versionen.",
+  625          "oldElectronClientDescription2": "senast build",
+
+lang/main-te.json:
+  547          "newDeviceCameraTitle": "కొత్త కేమెరా కనుగొనబడింది",
+  548:         "oldElectronClientDescription1": "You appear to be using an old version of the Jitsi Meet client which has known security vulnerabilities. Please make sure you update to our ",
+  549          "oldElectronClientDescription2": "సరికొత్త బిల్డు",
+
+lang/main-tr.json:
+   417          "decline": "Reddet",
+   418:         "productLabel": "Jitsi Meet'den",
+   419          "videoCallTitle": "Gelen görüntülü arama"
+
+   639          "newDeviceCameraTitle": "Yeni kamera algılandı",
+   640:         "oldElectronClientDescription1": "Güvenlik açıkları bilinen Jitsi Meet istemcisinin eski bir sürümünü kullanıyor görünüyorsunuz. Lütfen güncellediğinizden emin olun.",
+   641          "oldElectronClientDescription2": "son yapı",
+
+  1191              "googleLogo": "Google Logo",
+  1192:             "logoDeepLinking": "Jitsi meet logo",
+  1193              "microsoftLogo": "Microsoft logo",
+
+lang/main-uk.json:
+  352          "decline": "Відхилити",
+  353:         "productLabel": "з Jitsi Meet",
+  354          "videoCallTitle": "Вхідний відеовиклик"
+
+  540          "newDeviceCameraTitle": "Знайдено нову камеру",
+  541:         "oldElectronClientDescription1": "Схоже, ви використовуєте стару версію клієнта Jitsi Meet, яка має відомі уразливості в системі безпеки. Переконайтеся, що ви оновились до нашої",
+  542          "oldElectronClientDescription2": "останньої версії",
+
+lang/main-zhCN.json:
+  337          "decline": "解除,离开",
+  338:         "productLabel": "来自Jitsi Meet",
+  339          "videoCallTitle": "视频来电"
+
+  526          "newDeviceCameraTitle": "检测到新相机",
+  527:         "oldElectronClientDescription1": "您似乎正在使用具有已知安全漏洞的Jitsi Meet客户端的旧版本。请确保您更新到最新版本",
+  528          "oldElectronClientDescription2": "最新版本",
+
+lang/main-zhTW.json:
+   432          "decline": "拒接",
+   433:         "productLabel": "來自 Jitsi Meet",
+   434          "videoCallTitle": "視訊來電"
+
+   668          "newDeviceCameraTitle": "偵測到新的攝影裝置",
+   669:         "oldElectronClientDescription1": "您似乎正在使用 Jitsi Meet 客戶端的舊版本，其有已知的安全漏洞。請更新到",
+   670          "oldElectronClientDescription2": "最新版本",
+
+  1281              "googleLogo": "Google 商標",
+  1282:             "logoDeepLinking": "Jitsi meet 商標",
+  1283              "microsoftLogo": "Microsoft 商標",
+
+lang/main.json:
+   447          "decline": "Dismiss",
+   448:         "productLabel": "from Jitsi Meet",
+   449          "videoCallTitle": "Incoming video call"
+
+   693          "noiseSuppressionStereoDescription": "Stereo audio noise suppression is not currently supported.",
+   694:         "oldElectronClientDescription1": "You appear to be using an old version of the Jitsi Meet client which has known security vulnerabilities. Please make sure you update to our ",
+   695          "oldElectronClientDescription2": "latest build",
+
+  1336              "googleLogo": "Google Logo",
+  1337:             "logoDeepLinking": "Jitsi meet logo",
+  1338              "microsoftLogo": "Microsoft logo",
+
+lang/readme.md:
+   1: # Jitsi Meet Translation
+   2  
+   3: Jitsi Meet uses [i18next](http://i18next.com) library for translation.
+   4  i18next uses separate json files for each language.
+
+   6  
+   7: ## Translating Jitsi Meet
+   8  
+   9: The translation of Jitsi Meet is handled editing manually the language files.
+  10  
+
+  22  
+  23: If you want to add new functionality for Jitsi Meet and you have texts that need to be translated you must add key and value in main.json file in English for each translatable text.
+  24  Than you can use the key to get the translated text for the current language.
+
+modules/API/API.js:
+  540           * @param { boolean } arg.shouldShare - Whether the recording should be shared with the participants or not.
+  541:          * Only applies to certain jitsi meet deploys.
+  542           * @param { string } arg.youtubeStreamKey - The youtube stream key.
+
+  925   * Implements API class that communicates with external API class and provides
+  926:  * interface to access Jitsi Meet features by external applications that embed
+  927:  * Jitsi Meet.
+  928   */
+
+  933       * Initializes the API. Setups message event listeners that will receive
+  934:      * information from external applications that embed Jitsi Meet. It also
+  935       * sends a message to the external application that API is initialized.
+
+modules/API/external/external_api.js:
+   278      /**
+   279:      * Constructs new API instance. Creates iframe and loads Jitsi Meet in it.
+   280       *
+
+   448      /**
+   449:      * Getter for the large video element in Jitsi Meet.
+   450       *
+
+   466      /**
+   467:      * Getter for participant specific video element in Jitsi Meet.
+   468       *
+
+   699       * {@code suspendDetected} - receives event notifications about detecting suspend event in host computer.
+   700:      * {@code readyToClose} - all hangup operations are completed and Jitsi Meet
+   701       * is ready to be disposed.
+
+   725      /**
+   726:      * Removes the listeners and removes the Jitsi Meet frame.
+   727       *
+
+  1063      /**
+  1064:      * Returns the iframe that loads Jitsi Meet.
+  1065       *
+
+  1245       * @param { boolean } options.shouldShare - Whether the recording should be shared with the participants or not.
+  1246:      * Only applies to certain jitsi meet deploys.
+  1247       * @param { string } options.rtmpStreamKey - The RTMP stream key.
+
+modules/API/external/index.js:
+  1: // For legacy purposes, preserve the UMD of the public API of Jitsi Meet
+  2  // external API (a.k.a. JitsiMeetExternalAPI).
+
+modules/transport/index.js:
+  25  /**
+  26:  * The instance of Transport class that will be used by Jitsi Meet.
+  27   *
+
+  32  /**
+  33:  * Returns the instance of Transport class that will be used by Jitsi Meet.
+  34   *
+
+react/features/app/functions.native.js:
+  33  /**
+  34:  * Returns the path to the Jitsi Meet SDK bundle on iOS. On Android it will be
+  35   * undefined.
+
+react/features/base/conference/constants.js:
+  18   *
+  19:  * TODO It was introduced in a moment of desperation. Jitsi Meet SDK for Android
+  20   * and iOS needs to deliver events from the JavaScript side where they originate
+
+react/features/base/conference/functions.js:
+  163  
+  164:             // XXX The Web version of Jitsi Meet does not utilize
+  165              // JITSI_CONFERENCE_URL_KEY at the time of this writing. An
+
+react/features/base/config/actions.js:
+   33  /**
+   34:  * Signals that the configuration (commonly known in Jitsi Meet as config.js)
+   35   * for a specific locationURL will be loaded now.
+
+   54  /**
+   55:  * Signals that a configuration (commonly known in Jitsi Meet as config.js)
+   56   * could not be loaded due to a specific error.
+
+  133  /**
+  134:  * Stores a specific Jitsi Meet config.js object into {@code localStorage}.
+  135   *
+
+  137   * downloaded.
+  138:  * @param {Object} config - The Jitsi Meet config.js to store.
+  139   * @returns {Function}
+
+react/features/base/config/configWhitelist.js:
+  36       * configuration, only as a runtime configuration override/overwrite
+  37:      * provided by, for example, Jitsi Meet SDK for iOS.
+  38       *
+
+  51       * deployment-wide configuration, only as a runtime configuration
+  52:      * override/overwrite provided by, for example, Jitsi Meet SDK for iOS.
+  53       *
+
+  64       * associated with this config.js. The property is meant for use cases in
+  65:      * which Jitsi Meet is to work with a CallKit call created outside of Jitsi
+  66:      * Meet and to be adopted by Jitsi Meet such as, for example, an incoming
+  67:      * and/or outgoing CallKit call created by Jitsi Meet SDK for iOS
+  68:      * clients/consumers prior to giving control to Jitsi Meet. As the value is
+  69       * associated with a conference/meeting, the value makes sense not as a
+  70       * deployment-wide configuration, only as a runtime configuration
+  71:      * override/overwrite provided by, for example, Jitsi Meet SDK for iOS.
+  72       *
+
+react/features/base/config/functions.any.js:
+  234  /**
+  235:  * Restores a Jitsi Meet config.js from {@code localStorage} if it was
+  236   * previously downloaded from a specific {@code baseURL} and stored with
+
+  240   * previously downloaded and stored with {@code storeConfig}.
+  241:  * @returns {?Object} The Jitsi Meet config.js which was previously downloaded
+  242   * from {@code baseURL} and stored with {@code storeConfig} if it was restored;
+
+  290      //     "config.channelLastN": -1,
+  291:     //     "interfaceConfig.APP_NAME": "Jitsi Meet"
+  292      // }
+
+  299      //     interfaceConfig: {
+  300:     //         "APP_NAME": "Jitsi Meet"
+  301      //     }
+
+react/features/base/config/reducer.ts:
+   25   * non-React Native environment. The mandatory configuration to be passed to
+   26:  * JitsiMeetJS#init(). The app will download config.js from the Jitsi Meet
+   27   * deployment and take its values into account but the values below will be
+
+   38   * environment. The mandatory configuration to be passed to JitsiMeetJS#init().
+   39:  * The app will download config.js from the Jitsi Meet deployment and take its
+   40   * values into account but the values below will be enforced (because they are
+
+  128   * configuration to be passed to JitsiMeetJS#init(). The app will download
+  129:  * config.js from the Jitsi Meet deployment and take its values into account but
+  130   * the values below will be enforced (because they are essential to the correct
+
+  180          // The config of _getInitialState() is meant to override the config
+  181:         // downloaded from the Jitsi Meet deployment because the former contains
+  182          // values that are mandatory.
+
+react/features/base/participants/constants.ts:
+  6   *
+  7:  * XXX (1) Web/React utilizes relativity on the Jitsi Meet deployment.
+  8   * (2) Mobile/React Native utilizes relativity on the local file system at build
+
+react/features/base/redux/README.md:
+   1: Jitsi Meet - redux state persistence
+   2  ====================================
+   3: Jitsi Meet has a persistence layer that persists specific subtrees of the redux
+   4  store/state into window.localStorage (on Web) or AsyncStorage (on mobile).
+
+  23  
+  24: When it's done, Jitsi Meet will automatically persist these subtrees and
+  25  rehydrate them on startup.
+
+react/features/base/util/uri.ts:
+   48   * Excludes/removes certain characters from a specific path part which are
+   49:  * incompatible with Jitsi Meet on the client and/or server sides. The main
+   50   * use case for this method is to clean up the room name and the tenant.
+
+  233      // avoid potential later problems related to whitespace in URI, strip any
+  234:     // whitespace. Anyway, the Jitsi Meet app is not known to utilize unencoded
+  235      // whitespace so the stripping is deemed safe.
+
+  314  /**
+  315:  * Parses a specific URI which (supposedly) references a Jitsi Meet resource
+  316   * (location).
+
+  318   * @param {(string|undefined)} uri - The URI to parse which (supposedly)
+  319:  * references a Jitsi Meet resource (location).
+  320   * @public
+
+  339  
+  340:     // XXX While the components/segments of pathname are URI encoded, Jitsi Meet
+  341      // on the client and/or server sides still don't support certain characters.
+
+  344  
+  345:     // Add the properties that are specific to a Jitsi Meet resource (location)
+  346      // such as contextRoot, room:
+
+react/features/calendar-sync/functions.any.js:
+  165  /**
+  166:  * Retrieves a Jitsi Meet URL from an event if present.
+  167   *
+
+react/features/embed-meeting/components/EmbedMeetingDialog.js:
+  24  /**
+  25:  * Allow users to embed a jitsi meeting in an iframe.
+  26   *
+
+  30      /**
+  31:      * Get the embed code for a jitsi meeting.
+  32       *
+
+react/features/mobile/external-api/functions.js:
+  11   * apps may listen to such events via the mechanisms provided by the (native)
+  12:  * mobile Jitsi Meet SDK.
+  13   *
+
+react/features/mobile/external-api/middleware.js:
+  487   * be created and only then base/conference feature would emit
+  488:  * {@link CONFERENCE_WILL_JOIN}. That is fine for the Jitsi Meet app, because
+  489   * that's the a conference instance gets created, but it's too late for
+
+react/features/mobile/navigation/functions.js:
+  44   * Determines whether the {@code Prejoin page} is enabled by the app itself
+  45:  * (e.g. Programmatically via the Jitsi Meet SDK for Android and iOS).
+  46   *
+
+react/features/old-client-notification/functions.js:
+  5  /**
+  6:  * Returns true if Jitsi Meet is running in too old jitsi-meet-electron app and false otherwise.
+  7   *
+  8:  * @returns {boolean} - True if Jitsi Meet is running in too old jitsi-meet-electron app and false otherwise.
+  9   */
+
+react/features/old-client-notification/components/OldElectronAPPNotificationDescription.js:
+  18  /**
+  19:  * A component that renders the description of the notification for old Jitsi Meet Electron clients.
+  20   *
+
+react/features/recent-list/reducer.js:
+  105  
+  106:         // In an enterprise/internal build of Jitsi Meet for Android and iOS we
+  107          // had recent-list's state as an object with property list.
+
+resources/cloud-api.swagger:
+  2  info:
+  3:   description: "Documents the REST calls used by Jitsi Meet to integrate with other services"
+  4    version: "1.0.0"
+
+twa/twa-manifest.json:
+  3    "host": "meet.jit.si",
+  4:   "name": "Jitsi Meet",
+  5:   "launcherName": "Jitsi Meet",
+  6    "display": "standalone",
+
+twa/app/build.gradle:
+  24      launchUrl: '/', // The start path for the TWA. Must be relative to the domain.
+  25:     name: 'Jitsi Meet', // The application name.
+  26:     launcherName: 'Jitsi Meet', // The name shown on the Android Launcher.
+  27      themeColor: '#17A0DB', // The color used for the status bar.
+
+twa/app/src/main/res/raw/web_app_manifest.json:
+  1: {"android_package_name":"org.jitsi.meet","prefer_related_applications":true,"related_applications":[{"id":"org.jitsi.meet","platform":"chromeos_play"}],"short_name":"Jitsi Meet","name":"Jitsi Meet","icons":[{"src":"static/pwa/icons/icon192.png","type":"image/png","sizes":"192x192"},{"src":"static/pwa/icons/icon512.png","type":"image/png","sizes":"512x512"},{"src":"static/pwa/icons/iconMask.png","sizes":"512x512","type":"image/png","purpose":"maskable"}],"start_url":"/","background_color":"#17A0DB","display":"standalone","scope":"/","theme_color":"#17A0DB"}

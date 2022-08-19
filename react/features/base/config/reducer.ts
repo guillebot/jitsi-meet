@@ -378,7 +378,7 @@ function _translateLegacyConfig(oldValue: IConfig) {
     }
 
     newValue.defaultRemoteDisplayName
-        = newValue.defaultRemoteDisplayName || 'TIBI User';
+        = newValue.defaultRemoteDisplayName || 'CSM User';
 
     newValue.transcription = newValue.transcription || {};
     if (oldValue.transcribingEnabled !== undefined) {

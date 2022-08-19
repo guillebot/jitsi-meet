@@ -601,7 +601,7 @@ var config = {
     // defaultLocalDisplayName: 'me',
 
     // Default remote name to be displayed
-    // defaultRemoteDisplayName: 'TIBI User',
+    // defaultRemoteDisplayName: 'CSM User',
 
     // Hides the display name from the participant thumbnail
     // hideDisplayName: false,

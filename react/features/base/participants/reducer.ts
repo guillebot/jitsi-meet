@@ -498,7 +498,7 @@ function _getDisplayName(state: Object, name?: string): string {
     // @ts-ignore
     const config = state['features/base/config'];
 
-    return name ?? (config?.defaultRemoteDisplayName || 'TIBI User');
+    return name ?? (config?.defaultRemoteDisplayName || 'CSM User');
 }
 
 /**

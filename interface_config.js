@@ -9,7 +9,7 @@
  */
 
 var interfaceConfig = {
-    APP_NAME: 'TIBI Medical',
+    APP_NAME: 'CORESTIX Medical',
     AUDIO_LEVEL_PRIMARY_COLOR: 'rgba(255,255,255,0.4)',
     AUDIO_LEVEL_SECONDARY_COLOR: 'rgba(255,255,255,0.2)',
 
@@ -242,7 +242,7 @@ var interfaceConfig = {
     // DEFAULT_LOCAL_DISPLAY_NAME: 'me',
 
     // Please use defaultRemoteDisplayName from config.js
-    // DEFAULT_REMOTE_DISPLAY_NAME: 'TIBI User',
+    // DEFAULT_REMOTE_DISPLAY_NAME: 'CSM User',
 
     // Moved to config.js as `toolbarConfig.initialTimeout`.
     // INITIAL_TOOLBAR_TIMEOUT: 20000,

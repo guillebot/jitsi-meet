@@ -696,8 +696,8 @@ var config = {
     // - it's impossible to control the placement of buttons
     // - 'desktop' controls the "Share your screen" button
     // - if `toolbarButtons` is undefined, we fallback to enabling all buttons on the UI
-    // toolbarButtons: [
-    //    'camera',
+    toolbarButtons: [
+        'camera',
     //    'chat',
     //    'closedcaptions',
     //    'desktop',
@@ -706,19 +706,19 @@ var config = {
     //    'embedmeeting',
     //    'etherpad',
     //    'feedback',
-    //    'filmstrip',
-    //    'fullscreen',
-    //    'hangup',
+        'filmstrip',
+        'fullscreen',
+        'hangup',
     //    'help',
     //    'highlight',
     //    'invite',
     //    'linktosalesforce',
     //    'livestreaming',
-    //    'microphone',
+        'microphone',
     //    'noisesuppression',
     //    'participants-pane',
     //    'profile',
-    //    'raisehand',
+        'raisehand',
     //    'recording',
     //    'security',
     //    'select-background',
@@ -727,11 +727,11 @@ var config = {
     //    'sharedvideo',
     //    'shortcuts',
     //    'stats',
-    //    'tileview',
-    //    'toggle-camera',
+        'tileview',
+        'toggle-camera',
     //    'undock-iframe',
     //    'videoquality',
-    // ],
+     ],
 
     // Holds values related to toolbar visibility control.
     // toolbarConfig: {
